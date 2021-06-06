@@ -1,11 +1,22 @@
-import './App.css';
-
-function App() {
+import React from 'react'
+import Header from './Components/Header'
+import Search from './Components/Search'
+import Login from './Components/Login'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+function App (){
   return (
-    <div className="App">
-     
-    </div>
-  );
+  <div>
+  <BrowserRouter>
+      <Header />
+      <Switch>
+          <Route path="/callback" component={Search} />
+          <Route path='/' component={Login}></Route>
+      </Switch>
+    </BrowserRouter>
+  </div>
+
+)
+
 }
 
 export default App;
