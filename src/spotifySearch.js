@@ -15,7 +15,9 @@ const urlParams = new URLSearchParams(hash)
       alert('Expired Session')
   })
   const data = await search.json()
-  const albums = !data.albums ? window.location.replace('http://localhost:3000/') :[...data.albums.items.map( album =>{
+  const albums = !data.albums ? 
+  window.location.replace('../') :
+  [...data.albums.items.map( album =>{
     return Object.assign({},{
         id: album.id,
         artist: album.artists[0].name,
