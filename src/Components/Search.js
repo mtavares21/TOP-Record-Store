@@ -7,7 +7,7 @@ import Cart from "./Cart";
 function Search() {
   const [query, setQuery] = useState(null);
   const [data, setData] = useState([]);
-  const [currAlbum, setAlbum] = useState("1DFixLWuPkv3KT3TnV35m3");
+  const [currAlbum, setAlbum] = useState("70QLa02zm19XEJAWUwNk4R");
   const [cart, setCart] = useState([]);
 
   const handleChange = (e) => {

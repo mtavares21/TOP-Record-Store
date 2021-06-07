@@ -1,16 +1,18 @@
 import React from 'react'
-
+import { BrowserRouter, Switch, Route, Router, Link } from "react-router-dom";
 function Header() {
   return (
     <div>
       <header>
         <h1>RecordStore</h1>
-        <ul class="navBar">
-          <li>Lounge</li>
-          <li>Contacts</li>
+        <ul className="navBar">
+
+          <li><Link className='link' to="/callback">Store</Link></li>
+
+          <li><Link className='link' to="/contacts">Contacts</Link></li>
         </ul>
       </header>
-    <div class='line'></div>
+    <div className='line'></div>
     </div>
   );
 }
