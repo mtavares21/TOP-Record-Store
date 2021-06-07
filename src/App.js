@@ -7,7 +7,7 @@ import Contacts from './Components/Contacts'
 function App (){
   return (
   <div>
-  <BrowserRouter>
+  <BrowserRouter basename='/TOP-Record-Store'>
       <Header />
       <Switch>
           <Route path='/callback' component={Search} />
