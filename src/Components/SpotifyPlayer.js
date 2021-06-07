@@ -8,8 +8,8 @@ function Player(props) {
         id="spotify"
         src={`https://open.spotify.com/embed/album/${props.currAlbum}`}
         width="350"
-        height="80"
-        frameborder="0"
+        height="400"
+        frameBorder="0"
         allowtransparency="true"
         allow="encrypted-media"
       ></iframe>
