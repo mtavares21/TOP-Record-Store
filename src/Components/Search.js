@@ -9,7 +9,7 @@ function Search() {
   const [data, setData] = useState([]);
   const [currAlbum, setAlbum] = useState("70QLa02zm19XEJAWUwNk4R");
   const [cart, setCart] = useState([]);
-
+  // Search form onChange and OnSubmit
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
@@ -20,12 +20,13 @@ function Search() {
       setData(() => [...searchResults]);
     }
   }
-
+  // Current album on Spotify Player
   const playAlbum = (album) => {
     const splitUri = album.split("album:");
     setAlbum(splitUri[1]);
   }
   ///////// Cart Controls ////////
+  // Arrows Up
   const increment = (id) => {
     const newState = cart.map( item => {
       if(item.id === id){
@@ -35,7 +36,7 @@ function Search() {
     })
     setCart((prevState) => prevState = [...newState])
   }
-
+  // Arrow Down
   const decrement = (id) => {
     const newState = cart.map( item =>{
       if(item.id === id && item.quantity > 1){ 
@@ -46,7 +47,7 @@ function Search() {
     setCart((prevState) =>  
       prevState = [...newState])
   };
-  // onChange function
+  // Cart onChange function
   const quantityChange = (e, id) => {
      const newState = cart.map( item =>{
       if(item.id === id){ 

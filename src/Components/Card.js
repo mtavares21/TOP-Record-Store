@@ -1,6 +1,7 @@
 import React from "react";
 
 function Card(props) {
+console.log(props.src)
   return (
     <div className="card">
       <div className="containPlay">

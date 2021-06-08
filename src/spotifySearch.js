@@ -1,9 +1,9 @@
 async function spotifySearch (query){
-  
-const hash = window.location.hash
-const urlParams = new URLSearchParams(hash)
-
+  // Get token from the url
+  const hash = window.location.hash
+  const urlParams = new URLSearchParams(hash)
   const token = urlParams.get('#access_token');
+  // Use token to get Spotify data
   const search = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=album&limit=50`,{
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -15,7 +15,10 @@ const urlParams = new URLSearchParams(hash)
       alert('Expired Session')
   })
   const data = await search.json()
-  console.log(data)
+  /* 
+  Create an array of albums when fetch worked, 
+  else go to login page (token has expired)
+  */
   const albums = !data.albums ? window.location.replace('../') :[...data.albums.items.map( album =>{
     return Object.assign({},{
         id: album.id,
