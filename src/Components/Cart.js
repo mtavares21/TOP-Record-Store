@@ -20,7 +20,8 @@ function Cart(props) {
         <h3 className="cartEmpty">Your cart is empty.</h3>
       ) : (
         <div>
-          <div>
+        <div>
+          <div className='cartItemContain'>
             {props.cart.map((album) => {
               return (
                 <CartItem
@@ -33,6 +34,7 @@ function Cart(props) {
                 />
               );
             })}
+            </div>
             <div className="line"> </div>
             <h4> TOTAL: <i>{sumQuantity()}€</i></h4>
             <div className="buyBtn">
